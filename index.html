@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide and Show Password</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            
+        }
+        body {
+            background: #e5e5e5;
+        }
+         .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+         }
+
+         .container_password {
+            width: 400px;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 0 10px;
+         }
+         .input_user {
+            width: 100%;
+            height: 50px;
+            padding-inline: 1rem;
+            position: relative;
+            border: none;
+            outline: none;
+         }
+         
+    </style>
+    <div class="container">
+       <div class="container_password">
+        <input  class="input_user" type="password" id="UserPassword" placeholder="Enter Password">
+        <span class="span_icon"><i class="fa-solid fa-eye-slash" id="UserIcon"></i></span>
+       </div>
+    </div>
+    <script>
+           const userpassword = document.getElementById('UserPassword')
+           const eyeicon = document.getElementById('UserIcon')
+
+           eyeicon.onclick = function() {
+               if (userpassword.type == 'password') {
+                 userpassword.type = 'text'
+                 eyeicon.classList.remove('fa-eye-slash');
+                 eyeicon.classList.add('fa-eye');
+               } else {
+                userpassword.type = 'password'
+                eyeicon.classList.remove('fa-eye');
+                eyeicon.classList.add('fa-eye-slash');
+               }
+           }
+       
+    </script>
+</body>
+</html>
